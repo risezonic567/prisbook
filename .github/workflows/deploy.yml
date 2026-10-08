@@ -1,4 +1,4 @@
-name: AutoDeploy through Jenkins to kradtravel
+name: AutoDeploy through Jenkins to prisbook
 
 on:
   push:

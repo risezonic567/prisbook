@@ -4,7 +4,7 @@ services:
 
   backend:
     build: ./Backend
-    container_name: kradtravel_backend
+    container_name: prisbook_backend   
     restart: always
 
     ports:
@@ -15,7 +15,7 @@ services:
 
   frontend:
     build: ./Frontend
-    container_name: kradtravel_frontend
+    container_name: prisbook_frontend
     restart: always
 
     ports:
