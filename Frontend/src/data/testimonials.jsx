@@ -16,20 +16,20 @@ export let clientReviews = {
       name: "Sneha Patel ",
       date: "January, 2026",
       //image: "https://randomuser.me/api/portraits/men/41.jpg",
-      message: "“I had a sudden requirement of booking a hotel during my official travel and Krad Travel helped me get one for myself which was quite affordable.”"
+      message: "“I had a sudden requirement of booking a hotel during my official travel and Prisbook helped me get one for myself which was quite affordable.”"
     },
       {
       name: "Arjun Malhotra",
       date: "January, 2026",
       //image: "https://randomuser.me/api/portraits/men/41.jpg",
-      message: " “Krad Travel car rental service was really good. I was given the facility to choose the vehicle of my choice, and I was able to collect the car easily and without any problem.”"
+      message: " “Prisbook car rental service was really good. I was given the facility to choose the vehicle of my choice, and I was able to collect the car easily and without any problem.”"
     },
 
       {
       name: "Kavita Nair",
       date: "December, 2026",
       //image: "https://randomuser.me/api/portraits/men/41.jpg",
-      message: "“I recently booked my cruise holiday through Krad Travel. It was an amazing experience. From making bookings to providing all other travel related services and updates, everything was really professional”"
+      message: "“I recently booked my cruise holiday through Prisbook. It was an amazing experience. From making bookings to providing all other travel related services and updates, everything was really professional”"
     },
   ],
 
@@ -44,7 +44,7 @@ export let clientReviews = {
       name: "Karan Malhotra",
       date: "January, 2026",
       //image: "https://randomuser.me/api/portraits/women/65.jpg",
-      message: " “I booked a family stay through Krad Travel, and it was an amazing experience. “The hotel was as described, the price was fair, and the customer service was very helpful with the booking.”"
+      message: " “I booked a family stay through Prisbook, and it was an amazing experience. “The hotel was as described, the price was fair, and the customer service was very helpful with the booking.”"
     },
     {
       name: "Rahul Mehta",
@@ -60,7 +60,7 @@ export let clientReviews = {
       name: "Megha Arora",
       date: "March, 2026",
       //image: "https://randomuser.me/api/portraits/men/23.jpg",
-      message: "“I have always wanted to go on a cruise vacation, and Krad Travel made it all simple and easy.The support team was super supportive from booking to departure.”"
+      message: "“I have always wanted to go on a cruise vacation, and Prisbook made it all simple and easy.The support team was super supportive from booking to departure.”"
     },
     {
       name: "Arjun Patel",
@@ -82,7 +82,7 @@ export let clientReviews = {
       name: "Ankita Singh ",
       date: "February, 2026",
       //image: "https://randomuser.me/api/portraits/men/29.jpg",
-      message: " “I was very pleased with the rental car I received from Krad Travel. I had previously rented many cars from various companies and always had a fairly good experience, I was very pleased on how simple it was to find a very good price on a comfortable vehicle to drive around the city.”"
+      message: " “I was very pleased with the rental car I received from Prisbook. I had previously rented many cars from various companies and always had a fairly good experience, I was very pleased on how simple it was to find a very good price on a comfortable vehicle to drive around the city.”"
     },
     {
       name: "Manish Yadav ",
@@ -94,7 +94,7 @@ export let clientReviews = {
       name: "Vikas Gupta ",
       date: "January, 2026",
       //image: "https://randomuser.me/api/portraits/men/60.jpg",
-      message: "“The web site of Krad Travel was easy to navigate, and allowed me to rent a vehicle quickly and simply. I have rented vehicles from Krad Travel many times in my life, and I have always received very clean, well maintained vehicles from Krad Travel.”"
+      message: "“The web site of Prisbook was easy to navigate, and allowed me to rent a vehicle quickly and simply. I have rented vehicles from Prisbook many times in my life, and I have always received very clean, well maintained vehicles from Prisbook.”"
     },
 
   ],

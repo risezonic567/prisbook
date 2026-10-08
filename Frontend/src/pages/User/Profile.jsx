@@ -32,7 +32,7 @@ export default function Profile() {
 
       try {
         setLoading(true);
-        const res = await fetch(`https://kradtravel.com/api/user/profile/${userid}`, {
+        const res = await fetch(`http://localhost:3300/api/user/profile/${userid}`, {
           headers: { "Authorization": `Bearer ${token}` }
         });
         const data = await res.json();
@@ -87,14 +87,14 @@ export default function Profile() {
 
   const handleUpdate = () => {
     const userid = localStorage.getItem("userid")
-    apiRequest(`https://kradtravel.com/api/user/update/${userid}`, "PUT", formData, "Profile Updated ✅");
+    apiRequest(`http://localhost:3300/api/user/update/${userid}`, "PUT", formData, "Profile Updated ✅");
   };
 
   const handlePasswordChange = () => {
     const userid = localStorage.getItem("userid");
 
     apiRequest(
-      `https://kradtravel.com/api/user/update/${userid}`,
+      `http://localhost:3300/api/user/update/${userid}`,
       "PUT",
       passwordData,
       "Password Changed Successfully 🔐"

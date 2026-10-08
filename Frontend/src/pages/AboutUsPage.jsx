@@ -11,8 +11,12 @@ export default function AboutUsPage() {
       {/* Hero Section */}
       <section className="relative h-[60vh] md:h-[75vh] flex items-center justify-center overflow-hidden bg-slate-950">
         <motion.img
-          src="/images/7upTravel About banner.jpg.jpeg"
-          alt="About Krad Travel"
+          src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1600&q=85"
+          alt="Travelers exploring a new destination"
+          width="1600"
+          height="900"
+          loading="eager"
+          fetchPriority="high"
           className="absolute inset-0 w-full h-full object-cover opacity-50"
           initial={{ scale: 1.05 }}
           animate={{ scale: 1 }}
@@ -28,7 +32,7 @@ export default function AboutUsPage() {
             transition={{ duration: 0.5 }}
             className="uppercase tracking-widest text-blue-400 text-xs md:text-sm font-semibold mb-3 inline-block"
           >
-            About Krad Travel
+            About Prisbook
           </motion.span>
 
           <motion.h1
@@ -65,7 +69,7 @@ export default function AboutUsPage() {
             </h2>
             <div className="w-12 h-1 bg-blue-600 rounded-full" />
             <p className="text-slate-600 text-base leading-relaxed">
-              Founded in 2025, <strong className="text-slate-900">Krad Travel LLC</strong> was established with a singular focus: bringing transparency, comfort, and value to global travel planning.
+              Founded in 2025, <strong className="text-slate-900">Prisbook</strong> was established with a singular focus: bringing transparency, comfort, and value to global travel planning.
             </p>
           </div>
 
@@ -139,4 +143,3 @@ export default function AboutUsPage() {
     </div>
   );
 }
-

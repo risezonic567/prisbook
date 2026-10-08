@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 420" fill="none">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1600" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#176b70"/>
+      <stop offset=".52" stop-color="#234e60"/>
+      <stop offset="1" stop-color="#17394a"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="1234" y1="28" x2="1234" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f4bd8f" stop-opacity=".72"/>
+      <stop offset="1" stop-color="#e8795c" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#sky)" d="M0 0h1600v420H0z"/>
+  <circle cx="1235" cy="85" r="210" fill="url(#glow)"/>
+  <path fill="#fff" fill-opacity=".12" d="M0 282c180-73 319-72 466-11 143 59 265 49 396-13 158-75 322-84 490-19 91 35 169 41 248 22v159H0z"/>
+  <path fill="#fff" fill-opacity=".09" d="M0 336c188-56 322-52 467-4 150 50 282 41 421-13 162-62 326-66 480-16 89 29 160 32 232 14v103H0z"/>
+  <path fill="#fff" fill-opacity=".88" d="m754 124 120 36 117 9 24 12-4 10-158-3-63 96-21-2 29-98-111-29 12-13 82 9-45-26z"/>
+  <path stroke="#fff" stroke-opacity=".24" stroke-width="2" d="M0 369c254-53 427-45 613 4 204 54 395 46 594-15 153-47 275-49 393-14"/>
+</svg>

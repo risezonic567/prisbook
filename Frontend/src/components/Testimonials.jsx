@@ -21,29 +21,31 @@ export default function Testimonials() {
   const filteredData = clientReviews[selected] || [];
 
   return (
-    <section className="py-16 md:py-20 bg-slate-50 border-t border-slate-200/60 font-sans">
+    <section className="bg-[#17394a] py-16 font-sans text-white sm:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="text-center max-w-3xl mx-auto mb-10">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-3">
+        <div className="mb-10 grid max-w-7xl gap-8 md:grid-cols-[.8fr_1.2fr] md:items-end">
+          <div>
+          <p className="mb-3 text-xs font-bold uppercase tracking-[.18em] text-[#f4bd8f]">Good journeys, good words</p>
+          <h2 className="mb-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
             Trusted by Travelers Worldwide
           </h2>
-          <p className="text-slate-600 text-sm md:text-base leading-relaxed">
-            Read verified feedback from our clients about their flight, hotel, and travel booking experiences with Krad Travel.
+          <p className="text-sm leading-relaxed text-white/70 md:text-base">
+            Read verified feedback from our clients about their flight, hotel, and travel booking experiences with Prisbook.
           </p>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8 pt-8 border-t border-slate-200">
+          </div>
+          <div className="grid grid-cols-2 gap-4 border-t border-white/15 pt-5 md:grid-cols-4 md:gap-6">
             {[
               { num: "140+", label: "Years Experience" },
               { num: "4,000+", label: "Tours Managed" },
               { num: "1M+", label: "Satisfied Customers" },
               { num: "50+", label: "Industry Awards" }
             ].map((item, i) => (
-              <div key={i} className="text-center">
-                <span className="block text-2xl sm:text-3xl font-extrabold text-blue-600">
+              <div key={i} className="text-left">
+                <span className="block text-2xl font-bold text-[#f4bd8f] sm:text-3xl">
                   {item.num}
                 </span>
-                <span className="text-xs sm:text-sm font-medium text-slate-500 mt-1 block">
+                <span className="mt-1 block text-xs font-medium text-white/65 sm:text-sm">
                   {item.label}
                 </span>
               </div>
@@ -52,15 +54,15 @@ export default function Testimonials() {
         </div>
 
         {/* Category Tabs */}
-        <div className="flex justify-center flex-wrap gap-2 mb-10">
+        <div className="mb-8 flex flex-wrap gap-2">
           {tabs.map((item, id) => (
             <button
               key={id}
               onClick={() => setSelected(item.val)}
               className={`px-5 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer ${
                 item.val === selected
-                  ? "bg-slate-900 text-white shadow-xs"
-                  : "bg-white text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-slate-200"
+                  ? "bg-[#e8795c] text-white shadow-xs"
+                  : "border border-white/20 bg-white/5 text-white/75 hover:bg-white/10 hover:text-white"
               }`}
             >
               {item.title}
@@ -101,7 +103,7 @@ export default function Testimonials() {
         >
           {filteredData.map((item, id) => (
             <SwiperSlide key={id} className="h-auto">
-              <div className="h-full bg-white rounded-xl p-6 border border-slate-200 shadow-xs flex flex-col justify-between hover:border-slate-300 transition-colors">
+              <div className="flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-white p-6 text-[#17394a] shadow-[0_18px_50px_-28px_rgba(0,0,0,.45)] transition-transform hover:-translate-y-1">
                 
                 <div>
                   {/* Rating Stars & Quote Icon */}
@@ -111,7 +113,7 @@ export default function Testimonials() {
                         <Star key={starIndex} size={14} fill="currentColor" />
                       ))}
                     </div>
-                    <Quote size={18} className="text-slate-300" />
+                    <Quote size={18} className="text-[#176b70]/35" />
                   </div>
 
                   {/* Message */}
@@ -191,7 +193,7 @@ export default function Testimonials() {
 
 //       <div className='text-center mb-10 px-4'>
 //         <h2 className='text-3xl md:text-4xl font-bold text-black/70 mb-4'>
-//           Why Customers Love Krad Travel
+//           Why Customers Love Prisbook
 //         </h2>
 
 //         <div className='max-w-3xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center mt-6'>

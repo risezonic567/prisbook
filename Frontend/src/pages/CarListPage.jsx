@@ -309,6 +309,9 @@ const CarlistPage = () => {
                 <img
                   src={car.image}
                   alt={car.name}
+                  width="500"
+                  height="375"
+                  loading="lazy"
                   className="w-full h-32 object-contain group-hover:scale-108 transition-transform duration-500 ease-out"
                 />
 
@@ -392,5 +395,4 @@ const CarlistPage = () => {
 };
 
 export default CarlistPage;
-
 

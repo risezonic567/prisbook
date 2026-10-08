@@ -59,9 +59,9 @@ export default function Faq() {
   };
 
   return (
-    <div className="bg-slate-50 min-h-screen text-slate-900 font-sans selection:0 selection:text-white">
+    <div className="min-h-screen bg-white font-sans text-slate-900">
       {/* Hero / Header Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white py-20 md:py-28 px-4 sm:px-6">
+      <section className="relative overflow-hidden bg-[#17394a] px-4 py-16 text-white sm:px-6 sm:py-20">
         {/* Ambient Radial Overlay */}
         <div className="absolute inset-0 opacity-25 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
 
@@ -71,18 +71,18 @@ export default function Faq() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="relative max-w-4xl mx-auto text-center z-10"
         >
-          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full 0/10 border border-blue-400/20 text-blue-400 text-xs font-semibold tracking-wider uppercase mb-6 backdrop-blur-sm">
+          <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#f4bd8f] backdrop-blur-sm">
             <HelpCircle size={14} /> Support Center
           </span>
 
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">
+          <h1 className="text-3xl font-semibold leading-tight tracking-tight sm:text-5xl md:text-6xl">
             How Can We Help <br className="hidden sm:inline" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-sky-400">
+            <span className="text-[#f4bd8f]">
               You Today?
             </span>
           </h1>
 
-          <p className="max-w-2xl mx-auto text-slate-300 text-sm sm:text-base md:text-lg mt-6 leading-relaxed">
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-white/70 sm:text-base md:text-lg">
             Find quick answers for bookings, cancellations, payments, refunds, hotels, flights, and more with our premium support.
           </p>
 
@@ -95,7 +95,7 @@ export default function Faq() {
                 value={search}
                 placeholder="Search your question..."
                 onChange={(e) => setSearch(e.target.value)}
-                className="w-full bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl py-4 pl-14 pr-12 text-white placeholder-slate-400 outline-none shadow-2xl focus:ring-2 focus:ring-blue-400/50 focus:border-blue-400 transition text-sm sm:text-base"
+                className="w-full rounded-xl border border-white/20 bg-white/10 py-4 pl-14 pr-12 text-sm text-white shadow-xl backdrop-blur-md outline-none transition placeholder:text-white/45 focus:border-[#f4bd8f] focus:ring-2 focus:ring-[#f4bd8f]/30 sm:text-base"
               />
               {search && (
                 <button
@@ -112,8 +112,8 @@ export default function Faq() {
       </section>
 
       {/* Modern Animated Tab Bar */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 -mt-8 relative z-20">
-        <div className="bg-white rounded-2xl shadow-xl border border-slate-200/80 p-2 sm:p-3 overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]">
+      <section className="relative z-20 mx-auto -mt-6 max-w-7xl px-4 sm:px-6">
+        <div className="overflow-x-auto rounded-2xl border border-[#e9e2d6] bg-white p-2 shadow-[0_20px_60px_-32px_rgba(23,57,74,.3)] sm:p-3 [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]">
           <div className="flex items-center gap-1 sm:gap-2 min-w-max md:justify-center">
             {TABS.map((item) => {
               const Icon = item.icon;
@@ -149,11 +149,11 @@ export default function Faq() {
       </section>
 
       {/* Accordion Container */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+      <section className="mx-auto max-w-4xl px-4 py-10 sm:px-6 sm:py-14">
         {/* Active Section Info Header */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-4 border-b border-slate-200">
           <div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
+            <h2 className="text-2xl font-semibold text-[#17394a] sm:text-3xl">
               {TABS.find((t) => t.key === tab)?.label} FAQs
             </h2>
             <p className="text-slate-500 text-xs sm:text-sm mt-1">
@@ -201,7 +201,7 @@ export default function Faq() {
                       key={id}
                       className={`bg-white rounded-2xl border transition-all duration-300 ${
                         isOpen
-                          ? "border-blue-500 shadow-md ring-1 ring-blue-500/20"
+                          ? "border-[#176b70] shadow-md ring-1 ring-[#176b70]/20"
                           : "border-slate-200/80 hover:border-slate-300 hover:shadow-sm"
                       }`}
                     >
@@ -211,7 +211,7 @@ export default function Faq() {
                       >
                         <h3
                           className={`font-semibold text-base sm:text-lg transition-colors duration-200 pr-4 ${
-                            isOpen ? "text-blue-600" : "text-slate-800"
+                            isOpen ? "text-[#176b70]" : "text-slate-800"
                           }`}
                         >
                           {item.question}
@@ -220,7 +220,7 @@ export default function Faq() {
                         <div
                           className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-transform duration-300 ${
                             isOpen
-                              ? "bg-blue-600 text-white rotate-45"
+                              ? "bg-[#176b70] text-white rotate-45"
                               : "bg-slate-100 text-slate-500 hover:bg-slate-200"
                           }`}
                         >
@@ -257,4 +257,3 @@ export default function Faq() {
     </div>
   );
 }
-

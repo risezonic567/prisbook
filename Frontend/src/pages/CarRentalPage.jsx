@@ -1,11 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, Calendar, Clock, Search, Car, CheckCircle2, ShieldCheck } from "lucide-react";
-import WhyChooseUs from "./WhyChooseUs";
+import { MapPin, Calendar, Clock, Search, Car, ShieldCheck } from "lucide-react";
+// import WhyChooseUs from "./WhyChooseUs";
 import CarlistPage from "./CarListPage";
 import FAQPage from "./FaqPage";
 import Testimonials from "../components/Testimonials";
 import Features from "./HowItWorks";
+
+const labelClass =
+  "mb-1.5 flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-slate-500";
+
+const fieldClass =
+  "h-12 w-full rounded-xl border border-[#e9e2d6] bg-white px-3.5 text-sm font-medium text-[#17394a] outline-none transition placeholder:text-slate-400 focus:border-[#176b70] focus:bg-white focus:ring-2 focus:ring-[#176b70]/20";
+
+const checkboxClass =
+  "h-4 w-4 cursor-pointer rounded border-[#e9e2d6] accent-[#176b70]";
 
 export default function CabBookingSection() {
   const [showForm, setShowForm] = useState(false);
@@ -53,230 +62,214 @@ export default function CabBookingSection() {
 
   return (
     <>
-      <section className="bg-slate-900/5 py-8 mt-10 md:py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 font-sans">
-          <main className="relative flex flex-col md:flex-row items-center justify-center min-h-[75vh] py-6">
+      <section className="bg-white font-sans">
+        {/* Hero (short banner) */}
+        <div className="relative h-[380px] w-full overflow-hidden pt-16 sm:h-[420px] md:pt-20">
+          <motion.img
+            initial={{ scale: 1.05, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.9 }}
+            src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=85"
+            alt="Modern car ready for a road trip"
+            width="1400"
+            height="950"
+            loading="eager"
+            fetchPriority="high"
+            className="absolute inset-0 h-full w-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#17394a]/90 via-[#17394a]/60 to-[#17394a]/20" />
 
-            {/* Left Column: Interactive Form Card */}
-            <div className="z-30 w-full md:w-[440px] lg:w-[480px] order-2 md:order-1 mt-6 md:mt-0 md:absolute md:left-4 lg:left-8 md:top-1/2 md:-translate-y-1/2">
-              <AnimatePresence>
-                {showForm && (
-                  <motion.div
-                    initial={{ x: -60, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                    className="bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-slate-200/80 overflow-hidden"
-                  >
-                    {/* Form Card Header */}
-                    <div className="p-6 pb-4 border-b border-slate-100 flex items-center justify-between bg-gradient-to-r from-slate-900 to-slate-800 text-white">
-                      <div>
-                        <div className="inline-flex items-center gap-1.5 text-[11px] font-bold text-amber-400 uppercase tracking-wider mb-1">
-                          <Car size={14} />
-                          <span>Premium Travel</span>
-                        </div>
-                        <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
-                          Book Your Ride
-                        </h2>
-                      </div>
-                      <span className="hidden sm:inline-flex items-center gap-1 bg-white/10 text-slate-200 text-xs px-2.5 py-1 rounded-full border border-white/10">
-                        <ShieldCheck size={13} className="text-emerald-400" />
-                        Best Rates
-                      </span>
-                    </div>
+          <div className="relative mx-auto flex h-full max-w-6xl flex-col justify-center px-4 pb-16 sm:px-6">
+            <motion.div
+              initial={{ opacity: 1, y: 0 }}
+              animate={
+                showForm
+                  ? { y: isMobile ? 0 : 0, opacity: 1 }
+                  : { y: 0 }
+              }
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="max-w-2xl space-y-4"
+            >
+              <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white ring-1 ring-white/30 backdrop-blur">
+                <Car size={14} /> Reliable & Comfortable Rides
+              </span>
 
-                    {/* Form Input Fields Container */}
-                    <div className="p-6 bg-slate-50/50 space-y-4">
-                      
-                      {/* Pick-Up Location */}
-                      <div className="space-y-1">
-                        <label className="text-xs font-bold uppercase tracking-wider text-slate-600 flex items-center gap-1.5">
-                          <MapPin size={13} className="text-blue-600" />
-                          Pick-Up Location
-                        </label>
-                        <input
-                          type="text"
-                          placeholder="Enter pick-up location"
-                          value={formData["Enterpick-uplocation"]}
-                          onChange={handleChange}
-                          className="w-full h-11 px-3.5 rounded-xl bg-white border border-slate-200 text-sm outline-none focus:border-blue-600 focus:ring-4 focus:ring-blue-500/10 transition-all text-slate-900 placeholder:text-slate-400 shadow-2xs hover:border-slate-300"
-                        />
-                      </div>
+              <h1 className="text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl">
+                Book Your <span className="text-[#8fd6d0]">Cab</span>
+              </h1>
 
-                      {/* Different Dropoff Checkbox */}
-                      <div className="flex items-center space-x-2 py-0.5 select-none">
-                        <input
-                          type="checkbox"
-                          id="differentDropoff"
-                          checked={formData.differentDropoff}
-                          onChange={handleChange}
-                          className="w-4 h-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500 transition cursor-pointer accent-blue-600"
-                        />
-                        <label 
-                          htmlFor="differentDropoff" 
-                          className="text-xs font-semibold text-slate-700 cursor-pointer hover:text-slate-900 transition"
-                        >
-                          Drop car off at different location
-                        </label>
-                      </div>
+              <p className="max-w-xl text-sm leading-relaxed text-white/85 sm:text-base">
+                Pick your route, choose your time, and travel in comfort with
+                trusted drivers.
+              </p>
+            </motion.div>
+          </div>
+        </div>
 
-                      {/* Drop-Off Location */}
-                      <div className="space-y-1">
-                        <label className="text-xs font-bold uppercase tracking-wider text-slate-600 flex items-center gap-1.5">
-                          <MapPin size={13} className="text-emerald-600" />
-                          Drop-Off Location
-                        </label>
-                        <input
-                          type="text"
-                          placeholder="Enter drop-off location"
-                          value={formData["Enterdrop-offlocation"]}
-                          onChange={handleChange}
-                          className="w-full h-11 px-3.5 rounded-xl bg-white border border-slate-200 text-sm outline-none focus:border-blue-600 focus:ring-4 focus:ring-blue-500/10 transition-all text-slate-900 placeholder:text-slate-400 shadow-2xs hover:border-slate-300"
-                        />
-                      </div>
-
-                      {/* Date & Time Grid */}
-                      <div className="grid grid-cols-2 gap-3 pt-1">
-                        <div className="space-y-1">
-                          <label className="text-[11px] font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1">
-                            <Calendar size={12} className="text-slate-400" />
-                            Pickup Date
-                          </label>
-                          <input 
-                            type="date" 
-                            id="pickupDate"
-                            value={formData.pickupDate}
-                            onChange={handleChange}
-                            className="w-full h-10 px-2.5 rounded-xl bg-white border border-slate-200 text-xs text-slate-800 outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-500/10 transition" 
-                          />
-                        </div>
-
-                        <div className="space-y-1">
-                          <label className="text-[11px] font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1">
-                            <Clock size={12} className="text-slate-400" />
-                            Pickup Time
-                          </label>
-                          <input 
-                            type="time" 
-                            id="pickupTime"
-                            value={formData.pickupTime}
-                            onChange={handleChange}
-                            className="w-full h-10 px-2.5 rounded-xl bg-white border border-slate-200 text-xs text-slate-800 outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-500/10 transition" 
-                          />
-                        </div>
-
-                        <div className="space-y-1">
-                          <label className="text-[11px] font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1">
-                            <Calendar size={12} className="text-slate-400" />
-                            Dropoff Date
-                          </label>
-                          <input 
-                            type="date" 
-                            id="dropoffDate"
-                            value={formData.dropoffDate}
-                            onChange={handleChange}
-                            className="w-full h-10 px-2.5 rounded-xl bg-white border border-slate-200 text-xs text-slate-800 outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-500/10 transition" 
-                          />
-                        </div>
-
-                        <div className="space-y-1">
-                          <label className="text-[11px] font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1">
-                            <Clock size={12} className="text-slate-400" />
-                            Dropoff Time
-                          </label>
-                          <input 
-                            type="time" 
-                            id="dropoffTime"
-                            value={formData.dropoffTime}
-                            onChange={handleChange}
-                            className="w-full h-10 px-2.5 rounded-xl bg-white border border-slate-200 text-xs text-slate-800 outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-500/10 transition" 
-                          />
-                        </div>
-                      </div>
-
-                      {/* Age Group Checkbox */}
-                      <div className="flex items-center space-x-2 pt-1 select-none">
-                        <input
-                          type="checkbox"
-                          id="ageGroup"
-                          checked={formData.ageGroup}
-                          onChange={handleChange}
-                          className="w-4 h-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500 transition cursor-pointer accent-blue-600"
-                        />
-                        <label 
-                          htmlFor="ageGroup"
-                          className="text-xs font-semibold text-slate-700 cursor-pointer hover:text-slate-900 transition"
-                        >
-                          Driver age between 30-65
-                        </label>
-                      </div>
-
-                      {/* Interactive Search Button */}
-                      <motion.button
-                        type="button"
-                        onClick={handleSearch}
-                        whileHover={{ scale: 1.01 }}
-                        whileTap={{ scale: 0.98 }}
-                        className="w-full h-12 mt-3 bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 hover:from-blue-700 hover:to-indigo-800 text-white font-extrabold text-sm tracking-wide rounded-xl shadow-lg shadow-blue-500/20 transition-all flex items-center justify-center gap-2 cursor-pointer"
-                      >
-                        <Search size={16} />
-                        <span>SEARCH CABS</span>
-                      </motion.button>
-
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
-            {/* Right Column: Hero Visual Banner */}
-            <div className="w-full md:w-11/12 lg:w-4/5 relative md:ml-auto h-full flex items-center justify-end order-1 md:order-2">
+        {/* Long search card overlapping the hero */}
+        <div className="relative z-10 mx-auto -mt-14 max-w-6xl px-4 pb-12 sm:px-6">
+          <AnimatePresence>
+            {showForm && (
               <motion.div
-                initial={{ scale: 1.05, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.9 }}
-                className="w-full h-[320px] sm:h-[420px] md:h-[540px] rounded-3xl overflow-hidden shadow-2xl relative border border-slate-800/20"
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                className="rounded-2xl border border-[#e9e2d6] bg-white p-4 shadow-xl shadow-[#17394a]/10 sm:p-5"
               >
-                <img
-                  src="/images/Car Home Page.jpg.jpeg"
-                  alt="Taxi"
-                  className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-1000"
-                />
-
-                {/* Professional Dark Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-l from-slate-950/80 via-slate-950/40 to-transparent" />
-
-                {/* Dynamic Floating Title aligned to the right side */}
-                <motion.div
-                  initial={{ opacity: 1, y: 0 }}
-                  animate={
-                    showForm
-                      ? {
-                          y: isMobile ? 0 : 0,
-                          opacity: 0.9,
-                          scale: isMobile ? 1 : 1,
-                        }
-                      : { y: 0 }
-                  }
-                  transition={{ duration: 0.7, ease: "easeOut" }}
-                  className="absolute inset-0 flex flex-col items-end justify-center p-8 sm:p-12 md:p-16 text-right pr-6 md:pr-12 lg:pr-16"
-                >
-                  <span className="text-xs sm:text-sm font-bold tracking-widest text-amber-400 uppercase bg-black/40 backdrop-blur-md px-4 py-1.5 rounded-full border border-amber-400/30 mb-3 shadow-lg">
-                    Reliable & Comfortable Rides
+                {/* Card title row */}
+                <div className="mb-4 flex items-center justify-between">
+                  <h2 className="text-lg font-semibold text-[#17394a]">
+                    Book Your Ride
+                  </h2>
+                  <span className="inline-flex items-center gap-1 rounded-full bg-[#e6f2f1] px-2.5 py-1 text-xs font-semibold text-[#176b70]">
+                    <ShieldCheck size={13} />
+                    Best Rates
                   </span>
-                  <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight drop-shadow-xl leading-none">
-                    BOOK YOUR <span className="text-amber-400 underline decoration-blue-500 decoration-4 underline-offset-8">CAB</span>
-                  </h1>
-                </motion.div>
-              </motion.div>
-            </div>
+                </div>
 
-          </main>
+                {/* Fields row */}
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-[1.4fr_1.4fr_1fr_0.8fr_1fr_0.8fr]">
+                  <div>
+                    <label className={labelClass}>
+                      <MapPin size={13} className="text-[#176b70]" />
+                      Pick-Up Location
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Enter pick-up location"
+                      value={formData["Enterpick-uplocation"]}
+                      onChange={handleChange}
+                      className={fieldClass}
+                    />
+                  </div>
+
+                  <div>
+                    <label className={labelClass}>
+                      <MapPin size={13} className="text-emerald-600" />
+                      Drop-Off Location
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Enter drop-off location"
+                      value={formData["Enterdrop-offlocation"]}
+                      onChange={handleChange}
+                      className={fieldClass}
+                    />
+                  </div>
+
+                  <div>
+                    <label className={labelClass}>
+                      <Calendar size={13} className="text-[#176b70]" />
+                      Pickup Date
+                    </label>
+                    <input
+                      type="date"
+                      id="pickupDate"
+                      value={formData.pickupDate}
+                      onChange={handleChange}
+                      className={fieldClass}
+                    />
+                  </div>
+
+                  <div>
+                    <label className={labelClass}>
+                      <Clock size={13} className="text-[#176b70]" />
+                      Pickup Time
+                    </label>
+                    <input
+                      type="time"
+                      id="pickupTime"
+                      value={formData.pickupTime}
+                      onChange={handleChange}
+                      className={fieldClass}
+                    />
+                  </div>
+
+                  <div>
+                    <label className={labelClass}>
+                      <Calendar size={13} className="text-[#176b70]" />
+                      Dropoff Date
+                    </label>
+                    <input
+                      type="date"
+                      id="dropoffDate"
+                      value={formData.dropoffDate}
+                      onChange={handleChange}
+                      className={fieldClass}
+                    />
+                  </div>
+
+                  <div>
+                    <label className={labelClass}>
+                      <Clock size={13} className="text-[#176b70]" />
+                      Dropoff Time
+                    </label>
+                    <input
+                      type="time"
+                      id="dropoffTime"
+                      value={formData.dropoffTime}
+                      onChange={handleChange}
+                      className={fieldClass}
+                    />
+                  </div>
+                </div>
+
+                {/* Bottom row: checkboxes + button */}
+                <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                  <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-6">
+                    <div className="flex select-none items-center gap-2">
+                      <input
+                        type="checkbox"
+                        id="differentDropoff"
+                        checked={formData.differentDropoff}
+                        onChange={handleChange}
+                        className={checkboxClass}
+                      />
+                      <label
+                        htmlFor="differentDropoff"
+                        className="cursor-pointer text-xs font-semibold text-slate-600 transition hover:text-[#17394a]"
+                      >
+                        Drop car off at different location
+                      </label>
+                    </div>
+
+                    <div className="flex select-none items-center gap-2">
+                      <input
+                        type="checkbox"
+                        id="ageGroup"
+                        checked={formData.ageGroup}
+                        onChange={handleChange}
+                        className={checkboxClass}
+                      />
+                      <label
+                        htmlFor="ageGroup"
+                        className="cursor-pointer text-xs font-semibold text-slate-600 transition hover:text-[#17394a]"
+                      >
+                        Driver age between 30-65
+                      </label>
+                    </div>
+                  </div>
+
+                  <motion.button
+                    type="button"
+                    onClick={handleSearch}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="flex h-12 w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-[#176b70] px-8 text-sm font-bold uppercase tracking-wider text-white shadow-md transition hover:bg-[#125a5e] sm:w-auto"
+                  >
+                    <Search size={16} />
+                    <span>Search Cabs</span>
+                  </motion.button>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </section>
 
       {/* Sub-components maintained in original order */}
       <Features />
-      <WhyChooseUs />
+      {/* <WhyChooseUs /> */}
       <div id="sticky-trigger"></div>
       <CarlistPage />
 

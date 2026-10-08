@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
 @import "tailwindcss";
 
 @import 'swiper/css';
@@ -9,14 +8,17 @@
    ========================================================================== */
 :root {
   --font-sans: 'DM Sans', system-ui, sans-serif;
-  --font-heading: 'Manrope', 'DM Sans', system-ui, sans-serif;
-  --ink: #12263a;
-  --muted: #65758b;
-  --paper: #f7f9fc;
-  --line: #dbe4ee;
-  --brand: #0d5b8f;
-  --brand-deep: #08365f;
-  --accent: #c6282f;
+  --font-heading: 'DM Serif Display', Georgia, serif;
+  --ink: #17394a;
+  --muted: #697b80;
+  --paper: #ffffff;
+  --line: #e9e2d6;
+  --brand: #176b70;
+  --brand-deep: #17394a;
+  --accent: #e8795c;
+  --surface: #ffffff;
+  --surface-soft: #ffffff;
+  --shadow-soft: 0 18px 50px -28px rgba(23, 57, 74, .28);
 }
 
 body {
@@ -29,9 +31,10 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-h1, h2, h3, h4, .font-heading {
+h1, h2, h3, .font-heading {
   font-family: var(--font-heading);
-  letter-spacing: 0;
+  font-weight: 400;
+  letter-spacing: -.025em;
 }
 
 button, input, select, textarea {
@@ -43,8 +46,15 @@ button, a {
 }
 
 button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
-  outline: 3px solid rgba(198, 40, 47, .35);
+  outline: 3px solid rgba(23, 107, 112, .38);
   outline-offset: 3px;
+}
+
+.flight-search-form input:focus,
+.flight-search-form input:focus-visible {
+  outline: none !important;
+  outline-offset: 0;
+  box-shadow: none !important;
 }
 
 /* ==========================================================================
@@ -80,7 +90,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 
 /* Selection Color */
 ::selection {
-  background-color: var(--accent);
+  background-color: var(--brand);
   color: #ffffff;
 }
 
@@ -151,7 +161,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
    ========================================================================== */
 .travel-input {
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  background-color: #f8fafc;
+  background-color: #ffffff;
   border: 1px solid #e2e8f0;
 }
 
@@ -415,5 +425,137 @@ input:not([type="checkbox"]):not([type="radio"]), select, textarea {
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+/* Prisbook's warm editorial surfaces sit over the legacy utility markup. */
+:root {
+  color-scheme: light;
+  --brand: #176b70;
+  --brand-deep: #17394a;
+  --accent: #e8795c;
+  --line: #e9e2d6;
+}
+
+body {
+  background-color: var(--paper);
+}
+
+::selection {
+  background: var(--brand);
+  color: #fffaf2;
+}
+
+a,
+button,
+input,
+select,
+textarea {
+  transition-timing-function: cubic-bezier(.2, .75, .25, 1);
+}
+
+button:not(:disabled),
+[role="button"] {
+  cursor: pointer;
+}
+
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea {
+  min-height: 2.75rem;
+  border-color: var(--line);
+  background-color: #ffffff;
+  color: var(--ink);
+}
+
+input:not([type="checkbox"]):not([type="radio"]):focus,
+select:focus,
+textarea:focus {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 4px rgba(23, 107, 112, .12);
+}
+
+[class*="bg-gray-50"],
+[class*="bg-slate-50"],
+[class*="bg-stone-50"] {
+  background-color: var(--surface-soft) !important;
+}
+
+[class*="text-gray-900"],
+[class*="text-slate-900"],
+[class*="text-gray-800"],
+[class*="text-slate-800"] {
+  color: var(--ink) !important;
+}
+
+[class*="border-gray-"],
+[class*="border-slate-"] {
+  border-color: var(--line) !important;
+}
+
+[class*="bg-blue-"],
+[class*="bg-indigo-"],
+[class*="bg-sky-"] {
+  background-color: var(--brand) !important;
+}
+
+[class*="text-blue-"],
+[class*="text-indigo-"],
+[class*="text-sky-"] {
+  color: var(--brand) !important;
+}
+
+[class*="border-blue-"],
+[class*="border-indigo-"],
+[class*="border-sky-"] {
+  border-color: color-mix(in srgb, var(--brand) 24%, white) !important;
+}
+
+[class*="bg-red-500"],
+[class*="bg-red-600"],
+[class*="bg-red-700"],
+[class*="bg-orange-500"],
+[class*="bg-orange-600"] {
+  background-color: var(--accent) !important;
+}
+
+[class*="text-red-"],
+[class*="text-orange-"] {
+  color: #bb583e !important;
+}
+
+[class*="shadow-"] {
+  --tw-shadow-color: rgba(23, 57, 74, .12);
+}
+
+.glass-nav {
+  background: rgba(255, 250, 242, .9);
+  border-color: rgba(233, 226, 214, .9);
+}
+
+.glass-card {
+  border-color: rgba(233, 226, 214, .9);
+  box-shadow: var(--shadow-soft);
+}
+
+.travel-input {
+  border-color: var(--line);
+  background-color: #ffffff;
+}
+
+.travel-input:focus-within,
+.travel-input:focus {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 4px rgba(23, 107, 112, .12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
   }
 }

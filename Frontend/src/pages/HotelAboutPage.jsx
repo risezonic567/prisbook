@@ -62,8 +62,11 @@ export default function AboutSection() {
           <div className="relative">
             <div className="relative rounded-[36px] overflow-hidden h-[480px] sm:h-[540px] shadow-[0_25px_60px_rgba(15,23,42,0.18)] border-4 border-white/80">
               <img
-                src="/images/hotel page intro.jpg.jpeg"
-                alt="Luxury Hotel"
+                src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1400&q=85"
+                alt="Contemporary hotel suite with a comfortable sitting area"
+                width="1400"
+                height="900"
+                loading="lazy"
                 className="w-full h-full object-cover transform hover:scale-105 transition duration-700"
               />
 
@@ -88,7 +91,10 @@ export default function AboutSection() {
                       >
                         <img
                           src={`https://i.pravatar.cc/100?img=${i + 20}`}
-                          alt="client"
+                          alt={`Guest portrait ${i}`}
+                          width="100"
+                          height="100"
+                          loading="lazy"
                           className="w-full h-full object-cover"
                         />
                       </div>

@@ -9,7 +9,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-black text-white mt-24 pt-16 pb-10 px-4 sm:px-6 lg:px-8 relative overflow-hidden font-sans border-t border-slate-900">
+    <footer className="relative mt-16 overflow-hidden border-t border-white/10 bg-[#102b3c] px-4 pb-8 pt-14 font-sans text-white sm:mt-20 sm:px-6 sm:pt-16 lg:px-8">
       
       {/* Background ambient lighting */}
       {/* <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none -z-0" /> */}
@@ -21,16 +21,19 @@ export default function Footer() {
        
 
         {/* Main Footer Container */}
-        <div className="bg-slate-900/60 rounded-[2.5rem] p-8 sm:p-12 border border-slate-800/80 backdrop-blur-2xl shadow-xl">
+        <div className="rounded-[1.75rem] border border-white/10 bg-white/[.035] p-6 shadow-xl sm:p-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
             
             {/* Brand Column */}
             <div className="lg:col-span-4 space-y-6">
               <Link to="/" className="inline-block transition-transform hover:scale-105 duration-200">
-                <img 
-                  src="/logo/kradtravel.png" 
-                  alt="kradtravel" 
-                  className="h-18 w-auto bg-white rounded-xl p-2 shadow-md object-contain"
+                <img
+                  src="/logo/PRISBOOK LOGO.png"
+                  alt="Prisbook"
+                  width="252"
+                  height="56"
+                  loading="lazy"
+                  className="h-12 w-auto rounded-xl bg-white px-3 py-2 object-contain"
                 />
               </Link>
               <p className="text-sm text-white leading-relaxed max-w-sm">
@@ -55,7 +58,7 @@ export default function Footer() {
                   <div className="w-9 h-9 rounded-xl 0/10 border border-blue-500/20 flex items-center justify-center  group-hover:text-white transition-all">
                     <Mail size={15} />
                   </div>
-                  <span className="font-semibold">support@kradtravel.com</span>
+                  <span className="font-semibold">Email our travel team</span>
                 </a>
               </div>
             </div>
@@ -139,7 +142,7 @@ export default function Footer() {
 
         {/* Bottom Rights Bar */}
         <div className="flex flex-col sm:flex-row justify-between items-center text-xs text-white gap-4 px-2">
-          <p>© {currentYear} Krad Travel LLC. All rights reserved.</p>
+          <p>© {currentYear} Prisbook. All rights reserved.</p>
           <div className="flex flex-wrap gap-6 text-white font-medium">
             <Link to="/privacy-policy" className="">Privacy Policy</Link>
             <Link to="/terms-condition" className="">Terms & Conditions</Link>

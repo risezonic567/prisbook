@@ -6,25 +6,25 @@ export default function LatestNews() {
     {
       id: 1,
       title: "10 Ways on How to Improve your Hotel Stay",
-      image: "/images/hotelcruise/10 Ways on How to Improve your Hotel Stay.jpg.jpeg",
+      image: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1200&q=85",
       size: "medium", 
     },
     {
       id: 2,
       title: "Dive into our newest water-park adventure",
-      image: "/images/hotelcruise/Dive into our newest water-park adventure.jpg.jpeg",
+      image: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1200&q=85",
       size: "small",
     },
     {
       id: 3,
       title: "How Hotel Technology Can Help Small Businesses",
-      image: "/images/hotelcruise/How Hotel Technology Can Help Small Businesses.jpg.jpeg",
+      image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=85",
       size: "small",
     },
    {
   id: 4,
   title: "Hotel Service - Become a Guide for Your Guests",
-  image: "/images/hotelcruise/Hotel Service - Become a Guide for Your Guests.jpg.jpeg",
+  image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85",
   size: "small",
 }
   ];

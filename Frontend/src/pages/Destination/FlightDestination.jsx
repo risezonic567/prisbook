@@ -9,7 +9,7 @@ const destinations = [
     name: "Thailand",
     rating: "4.8",
     description: "Temples, nightlife & tropical beaches.",
-    image: "/images/th.jpg",
+    image: "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=900&q=85",
     path: "/thailand",
   },
   {
@@ -17,7 +17,7 @@ const destinations = [
     name: "Hong Kong",
     rating: "4.7",
     description: "Modern skyline & vibrant culture.",
-    image: "/images/hn.jpg",
+    image: "https://images.unsplash.com/photo-1536599018102-9f803c140fc1?auto=format&fit=crop&w=900&q=85",
     path: "/hong-kong",
   },
   {
@@ -25,7 +25,7 @@ const destinations = [
     name: "Maldives",
     rating: "4.9",
     description: "Luxury villas & crystal clear waters.",
-    image: "/images/ml.jpg",
+    image: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=900&q=85",
     path: "/maldives",
   },
   {
@@ -33,7 +33,7 @@ const destinations = [
     name: "Switzerland",
     rating: "4.8",
     description: "Snowy mountains & scenic landscapes.",
-    image: "/images/sz.jpg",
+    image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=85",
     path: "/switzerland",
   },
 ];
@@ -42,16 +42,16 @@ export default function FlightDestination() {
   const navigate = useNavigate();
 
   return (
-    <section className="relative py-20 sm:py-24 bg-slate-50 text-slate-800 font-sans overflow-hidden">
+    <section className="relative overflow-hidden bg-white py-16 text-slate-800 font-sans sm:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="mb-10 max-w-3xl sm:mb-12">
           <motion.span
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full  border border-blue-200  text-xs font-semibold uppercase tracking-wider mb-4"
+            className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#176b70]/20 bg-white px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#176b70]"
           >
             <Compass size={14} /> Explore The World
           </motion.span>
@@ -61,7 +61,7 @@ export default function FlightDestination() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.05 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight"
+            className="text-3xl font-semibold leading-tight tracking-tight text-[#17394a] sm:text-4xl md:text-5xl"
           >
             Popular Destinations ✈️
           </motion.h2>
@@ -71,14 +71,14 @@ export default function FlightDestination() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto"
+            className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 sm:text-base"
           >
             Discover breathtaking places around the globe with unforgettable experiences and seamless travel planning.
           </motion.p>
         </div>
 
         {/* Destinations Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:auto-rows-[205px] lg:grid-cols-4 lg:gap-5">
           {destinations.map((dest, index) => (
             <motion.div
               key={dest.id}
@@ -87,19 +87,22 @@ export default function FlightDestination() {
               transition={{ delay: index * 0.1, duration: 0.45 }}
               viewport={{ once: true }}
             >
-              <Link to={dest.path} className="block group h-full">
-                <div className="h-full flex flex-col justify-between overflow-hidden rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 hover:border-slate-300">
+              <Link to={dest.path} className={`group block h-full ${index === 0 ? "lg:col-span-2 lg:row-span-2" : ""}`}>
+                <div className="relative h-full min-h-[260px] overflow-hidden rounded-2xl bg-[#17394a] shadow-sm transition-all duration-300 group-hover:shadow-2xl">
                   
                   {/* Image Container */}
-                  <div className="relative h-80 overflow-hidden bg-slate-100">
+                  <div className={`relative h-full overflow-hidden bg-slate-100 ${index === 0 ? "min-h-[400px]" : "min-h-[260px]"}`}>
                     <img
                       src={dest.image}
-                      alt={dest.name}
+                      alt={`${dest.name} travel destination`}
+                      width="900"
+                      height="675"
+                      loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                     />
 
                     {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#102b3c]/90 via-[#102b3c]/15 to-transparent" />
 
                     {/* Rating Pill Badge */}
                     <div className="absolute top-4 left-4 bg-slate-900/40 backdrop-blur-md px-3 py-1 rounded-full border border-white/20 text-white flex items-center gap-1.5 text-xs font-semibold">
@@ -113,25 +116,19 @@ export default function FlightDestination() {
                     </div>
 
                     {/* Card Content Overlay */}
-                    <div className="absolute bottom-0 left-0 p-5 text-white">
-                      <h3 className="text-2xl font-bold mb-1  transition-colors">
+                    <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between gap-4 p-5 sm:p-6">
+                      <div className="text-white">
+                      <h3 className="mb-1 text-2xl font-semibold transition-colors sm:text-3xl">
                         {dest.name}
                       </h3>
 
                       <p className="text-xs text-slate-200 leading-relaxed line-clamp-2">
                         {dest.description}
                       </p>
-                    </div>
-                  </div>
-
-                  {/* Card Action Footer */}
-                  <div className="flex items-center justify-between px-5 py-4 bg-white border-t border-slate-100">
-                    <span className="text-xs font-semibold text-slate-600  transition-colors">
-                      Explore Destination
-                    </span>
-
-                    <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-white  group-hover:text-white transition-all duration-300">
-                      <ArrowRight size={15} />
+                      </div>
+                      <span className="mb-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/15 text-white backdrop-blur-sm transition group-hover:bg-[#e8795c]">
+                        <ArrowRight size={17} />
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -141,36 +138,8 @@ export default function FlightDestination() {
         </div>
 
         {/* CTA Banner */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mt-20 relative overflow-hidden rounded-3xl  p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl"
-        >
-          {/* Ambient Decorator */}
-          <div className="absolute -top-24 -right-24 w-80 h-80 bg-white/10 blur-3xl rounded-full pointer-events-none" />
 
-          <div className="relative z-10 max-w-xl text-center md:text-left">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight leading-tight">
-              Your Next Adventure Awaits 🌍
-            </h2>
-
-            <p className="mt-3 text-blue-100 text-sm sm:text-base leading-relaxed">
-              Book flights, discover dream destinations, and create unforgettable memories with premium travel experiences.
-            </p>
-          </div>
-
-          <button
-            onClick={() => navigate("/flight")}
-            className="relative z-10 shrink-0 cursor-pointer bg-white text-blue-700 px-7 py-3.5 rounded-xl font-bold text-sm sm:text-base hover: hover:shadow-lg transition-all duration-300 flex items-center gap-2.5 active:scale-95"
-          >
-            <span>Book a Flight</span>
-            <ArrowRight size={18} />
-          </button>
-        </motion.div>
       </div>
     </section>
   );
 } 
-

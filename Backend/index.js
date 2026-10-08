@@ -18,8 +18,8 @@ app.use(cors({
 
     const allowedOrigins = [
       "http://localhost:5173",
-      "https://kradtravel.com",
-      "https://www.kradtravel.com"
+      "https://prisbook.com",
+      "https://www.prisbook.com"
     ];
 
     if (!origin || allowedOrigins.includes(origin)) {

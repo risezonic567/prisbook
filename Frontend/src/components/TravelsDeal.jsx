@@ -14,8 +14,12 @@ export default function TravelsDeal() {
         <div className="relative max-w-7xl mx-auto rounded-[30px] overflow-hidden">
           
           <img
-            src="/images/hotelcruise/Explore Luxury Cruise Trips.jpg.jpeg"
-            alt="cruise"
+            src="https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=1400&q=85"
+            alt="Cruise ship sailing across the ocean"
+            width="1400"
+            height="800"
+            loading="eager"
+            fetchPriority="high"
             className="w-full h-[350px] md:h-[450px] object-cover"
           />
 
@@ -65,7 +69,7 @@ export default function TravelsDeal() {
             </p>
 
             <p className='text-gray-500 mb-4 mt-4'>
-                Every day, we reward 10 lucky travelers with a completely free hotel stay at selected partner properties. You don’t need to enter separately—just book any hotel through Krad Travel LLC, and you’re automatically in the draw.
+                Every day, we reward 10 lucky travelers with a completely free hotel stay at selected partner properties. You don’t need to enter separately—just book any hotel through Prisbook, and you’re automatically in the draw.
             </p>
             
             <h4 className='text-gray-500 font-semibold'>How to Qualify:</h4>
@@ -107,7 +111,7 @@ export default function TravelsDeal() {
 
             <h2 className='text-xl font-bold mb-4 mt-4'>🛌 Book & Enjoy – 20% OFF Room Rates</h2>
             <p className='text-gray-500 mt-5 mb-4'>
-                Enjoy 20% off the best available rate when you book your stay directly through Krad Travel LLC. This offer is perfect for travelers who want to combine value with comfort.
+                Enjoy 20% off the best available rate when you book your stay directly through Prisbook. This offer is perfect for travelers who want to combine value with comfort.
             </p>
             <h4 className='text-gray-500 font-semibold mt-5 mb-5'>Offer Highlights:</h4>
             
@@ -140,7 +144,7 @@ export default function TravelsDeal() {
            </ul>
            <p className='text-gray-500'><b>Hurry —</b> limited availability on select dates!</p>
            
-           <h2 className='text-xl font-bold mt-5 mb-5'>🌟 Why Book With Krad Travel LLC?</h2>
+           <h2 className='text-xl font-bold mt-5 mb-5'>🌟 Why Book With Prisbook?</h2>
            <ul className='text-gray-500 pl-10 mb-5 mt-5'>
             <li>✅ Best Price Guarantee – Find a lower price elsewhere? We’ll match it.</li>
             <li>🏨 Trusted Hotels – We partner only with verified, quality hotels.</li>
@@ -148,7 +152,7 @@ export default function TravelsDeal() {
             <li>💳 Secure Payments – Fully encrypted and trusted transactions.</li>
            </ul>
            <p className='text-md font-bold text-gray-500'>🚀 Ready to Travel?</p>
-           <p className='text-gray-500 mt-5 mb-5'>Take advantage of these limited-time deals and start planning your next adventure today. Great savings, incredible experiences, and trusted service — only at <b>Krad Travel LLC.</b></p>
+           <p className='text-gray-500 mt-5 mb-5'>Take advantage of these limited-time deals and start planning your next adventure today. Great savings, incredible experiences, and trusted service — only at <b>Prisbook.</b></p>
            
            
             {/* <div className="mt-20 bg-slate-50 rounded-3xl p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8">

@@ -155,7 +155,7 @@ export default function CheckoutPage() {
       // =========================
 
       const bookingRes = await fetch(
-        "https://kradtravel.com/api/checkout/booking",
+        "http://localhost:3300/api/checkout/booking",
         {
           method: "POST",
 
@@ -202,7 +202,7 @@ export default function CheckoutPage() {
       }
 
       const paymentRes = await fetch(
-        "https://kradtravel.com/api/payment/initiate",
+        "http://localhost:3300/api/payment/initiate",
         {
           method: "POST",
 
@@ -774,7 +774,7 @@ export default function CheckoutPage() {
 //       // =========================
 
 //       const bookingRes = await fetch(
-//         "https://kradtravel.com/api/checkout/booking",
+//         "http://localhost:3300/api/checkout/booking",
 //         {
 //           method: "POST",
 
@@ -823,7 +823,7 @@ export default function CheckoutPage() {
 //       }
 
 //       const paymentRes = await fetch(
-//         "https://kradtravel.com/api/payment/initiate",
+//         "http://localhost:3300/api/payment/initiate",
 //         {
 //           method: "POST",
 

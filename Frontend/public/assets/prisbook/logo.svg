@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 252 56" role="img" aria-labelledby="title">
+  <title id="title">Prisbook</title>
+  <rect x="2" y="4" width="48" height="48" rx="16" fill="#17394a"/>
+  <path d="M16 39V17h11a8 8 0 0 1 0 16h-4" fill="none" stroke="#fffaf2" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+  <path d="M27 25h8" fill="none" stroke="#e8795c" stroke-linecap="round" stroke-width="4"/>
+  <circle cx="39" cy="39" r="3" fill="#e8795c"/>
+  <text x="62" y="39" fill="#17394a" font-family="DM Sans, Arial, sans-serif" font-size="31" font-weight="700" letter-spacing="-1.4">Prisbook</text>
+</svg>

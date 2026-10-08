@@ -20,7 +20,7 @@ jobs:
           key: ${{secrets.SSH_PRIVATE_KEY}}
           script: |
           
-           cd /var/www/kradtravel
+           cd /var/www/prisbook
 
            git pull origin main
 

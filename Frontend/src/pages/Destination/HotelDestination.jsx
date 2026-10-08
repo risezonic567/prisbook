@@ -20,7 +20,7 @@ export default function HotelDestination() {
       location: "New York",
       price: "455",
       rating: "4.5",
-      img: "/images/New York Hotel.jpg.jpeg",
+      img: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1000&q=85",
       path: "/new-york"
     },
     {
@@ -29,7 +29,7 @@ export default function HotelDestination() {
       location: "California",
       price: "585",
       rating: "4.8",
-      img: "/images/California Hotel.jpg.jpeg",
+      img: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=85",
       path: "/california"
     },
     {
@@ -38,7 +38,7 @@ export default function HotelDestination() {
       location: "Los Angeles",
       price: "385",
       rating: "4.6",
-      img: "/images/Los Angeles Hotel.jpg.jpeg",
+      img: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1000&q=85",
       path: "/los-angeles"
     },
     {
@@ -47,7 +47,7 @@ export default function HotelDestination() {
       location: "Chicago",
       price: "665",
       rating: "4.8",
-      img: "/images/Chicago Hotel.jpg.jpeg",
+      img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=85",
       path: "/chicago"
     }
   ];
@@ -92,7 +92,10 @@ export default function HotelDestination() {
 
                   <img
                     src={hotel.img}
-                    alt={hotel.name}
+                    alt={`${hotel.name} in ${hotel.location}`}
+                    width="1000"
+                    height="750"
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
 

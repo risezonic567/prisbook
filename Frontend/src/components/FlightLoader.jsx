@@ -3,7 +3,14 @@ import { Plane } from 'lucide-react';
 
 const FlightLoader = () => {
   return (
-    <div className="fixed inset-0 bg-white/80 backdrop-blur-sm flex flex-col items-center justify-center z-50">
+    <div className="fixed inset-0 bg-white/90 backdrop-blur-sm flex flex-col items-center justify-center z-50" role="status" aria-label="Finding the best travel deals">
+      <img
+        src="/assets/prisbook/logo.svg"
+        alt="Prisbook"
+        width="252"
+        height="56"
+        className="mb-12 h-12 w-auto"
+      />
       <div className="relative w-64 h-2">
         {/* Progress Bar Track */}
         <div className="absolute inset-0 bg-gray-200 rounded-full overflow-hidden">
@@ -40,7 +47,7 @@ const FlightLoader = () => {
         transition={{ repeat: Infinity, duration: 2 }}
         className="mt-8 text-gray-600 font-medium tracking-widest uppercase text-sm"
       >
-        Finding best deals...
+        Finding your next way out...
       </motion.p>
     </div>
   );

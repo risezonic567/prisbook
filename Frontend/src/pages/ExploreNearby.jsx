@@ -13,37 +13,37 @@ export default function ExploreNearby() {
     {
       id: 1,
       name: "San Francisco",
-      img: "/images/sn.jpg",
+      img: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=900&q=85",
       path: "/san-francisco",
     },
     {
       id: 2,
       name: "Los Angeles",
-      img: "/images/lo.jpg",
+      img: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=900&q=85",
       path: "/los-angeles",
     },
     {
       id: 3,
       name: "Miami",
-      img: "/images/mi.jpg",
+      img: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=900&q=85",
       path: "/miami",
     },
     {
       id: 4,
       name: "Switzerland",
-      img: "/images/sz.jpg",
+      img: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=85",
       path: "/switzerland",
     },
     {
       id: 5,
       name: "Thailand",
-      img: "/images/th.jpg",
+      img: "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=900&q=85",
       path: "/thailand",
     },
   ];
 
   return (
-    <section className="py-16 px-4 bg-slate-50/70 relative font-sans">
+    <section className="relative bg-white px-4 py-16 font-sans sm:py-20">
       <div className="max-w-7xl mx-auto w-full">
 
         {/* Section Header with Custom Swiper Navigation Controls */}
@@ -53,7 +53,7 @@ export default function ExploreNearby() {
               <MapPin size={14} />
               <span>Trending Destinations</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
+            <h2 className="text-3xl font-semibold tracking-tight text-[#17394a] md:text-4xl">
               Explore Nearby
             </h2>
           </div>
@@ -112,18 +112,21 @@ export default function ExploreNearby() {
           {places.map((item) => (
             <SwiperSlide key={item.id} className="h-auto">
               <Link to={item.path} className="group block h-full">
-                <div className="flex flex-col h-full bg-white rounded-2xl p-3 border border-slate-200/70 shadow-xs hover:shadow-md transition-all duration-300">
+                <div className="relative h-full overflow-hidden rounded-[1.5rem] bg-[#17394a] shadow-sm transition-all duration-300 hover:shadow-xl">
 
                   {/* Image Container */}
-                  <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-slate-100">
+                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
                     <img
                       src={item.img}
                       alt={item.name}
+                      width="900"
+                      height="675"
+                      loading="lazy"
                       className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     />
 
                     {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-slate-950/10 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#102b3c]/90 via-[#102b3c]/10 to-transparent transition-opacity duration-300"></div>
 
                     {/* Badge */}
                     <span className="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-slate-800 text-xs font-semibold px-2.5 py-1 rounded-md shadow-xs">
@@ -132,18 +135,18 @@ export default function ExploreNearby() {
                   </div>
 
                   {/* Card Content */}
-                  <div className="pt-4 pb-1 px-1 flex justify-between items-center mt-auto">
-                    <div>
-                      <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                  <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5">
+                    <div className="text-white">
+                      <h3 className="text-xl font-bold transition-colors">
                         {item.name}
                       </h3>
-                      <p className="text-xs text-slate-500 font-medium mt-0.5">
+                      <p className="mt-1 text-xs font-medium text-white/75">
                         Explore exclusive deals
                       </p>
                     </div>
 
                     {/* Action Arrow Icon */}
-                    <div className="w-9 h-9 rounded-full border border-slate-200 text-slate-600 flex items-center justify-center group- group-hover:text-white group- transition-all duration-300 shrink-0">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/15 text-white backdrop-blur-sm transition-all duration-300 group-hover:bg-[#e8795c]">
                       <ArrowUpRight size={18} className="transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </div>
                   </div>
@@ -175,31 +178,31 @@ export default function ExploreNearby() {
 //     {
 //       id: 1,
 //       name: "San Francisco",
-//       img: "/images/sn.jpg",
+//       img: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=900&q=85",
 //       path: "/san-francisco",
 //     },
 //     {
 //       id: 2,
 //       name: "Los Angeles",
-//       img: "/images/lo.jpg",
+//       img: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=900&q=85",
 //       path: "/los-angeles",
 //     },
 //     {
 //       id: 3,
 //       name: "Miami",
-//       img: "/images/mi.jpg",
+//       img: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=900&q=85",
 //       path: "/miami",
 //     },
 //      {
 //       id: 4,
 //       name: "Switzerland",
-//       img: "/images/sz.jpg",
+//       img: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=85",
 //       path: "/switzerland",
 //     },
 //      {
 //       id: 5,
 //       name: "Thailand",
-//       img: "/images/th.jpg",
+//       img: "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=900&q=85",
 //       path: "/thailand",
 //     },
 //   ];

@@ -92,7 +92,7 @@ const cardVariants = {
 
 export default function OurServices() {
   return (
-    <section className="py-20 sm:py-24 bg-slate-50 text-slate-800 font-sans">
+    <section className="bg-white py-16 font-sans sm:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -101,17 +101,17 @@ export default function OurServices() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="mb-10 max-w-2xl"
         >
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full  border border-blue-200 text-blue-700 text-xs font-semibold uppercase tracking-wider mb-4">
+          <span className="mb-3 inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#176b70]">
             <Compass size={14} /> Our Travel Services
           </span>
 
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+          <h2 className="text-3xl font-semibold leading-tight tracking-tight text-[#17394a] sm:text-4xl">
             Travel Services Designed For You
           </h2>
 
-          <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
+          <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
             From seamless flights and hotels to custom local tours and round-the-clock assistance.
           </p>
         </motion.div>
@@ -122,7 +122,7 @@ export default function OurServices() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+          className="grid grid-cols-1 gap-x-12 sm:grid-cols-2"
         >
           {SERVICES.map((service, index) => {
             const Icon = service.icon;
@@ -132,29 +132,28 @@ export default function OurServices() {
                 key={index}
                 variants={cardVariants}
                 whileHover={{ y: -4 }}
-                className={`group bg-white border border-slate-200 rounded-2xl p-7 shadow-sm transition-all duration-300 ${service.hoverBorder} hover:shadow-xl flex flex-col justify-between`}
+                className={`group border-t border-[#e9e2d6] py-6 transition-all duration-300 ${service.hoverBorder}`}
               >
-                <div>
+                <div className="flex items-start gap-4">
                   {/* Icon */}
                   <div
-                    className={`w-12 h-12 rounded-xl flex items-center justify-center ${service.bgColor} mb-6 transition-transform duration-300 group-hover:scale-105`}
+                    className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${service.bgColor} transition-transform duration-300 group-hover:scale-105`}
                   >
                     <Icon size={24} className={service.iconColor} />
                   </div>
 
-                  {/* Title */}
-                  <h3 className="text-lg font-bold text-slate-900 mb-2.5 transition-colors group-hover:text-blue-600">
-                    {service.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-slate-600 text-sm leading-relaxed">
-                    {service.description}
-                  </p>
+                  <div>
+                    <h3 className="mb-2 text-base font-bold text-slate-900 transition-colors group-hover:text-blue-600">
+                      {service.title}
+                    </h3>
+                    <p className="text-sm leading-relaxed text-slate-600">
+                      {service.description}
+                    </p>
+                  </div>
                 </div>
 
                 {/* Footer Action */}
-                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center text-xs font-semibold text-slate-500 group-hover:text-blue-600 transition-colors">
+                <div className="mt-3 flex items-center pl-[3.75rem] text-xs font-semibold text-slate-500 transition-colors group-hover:text-blue-600">
                   <span>Learn more</span>
                   <ArrowRight
                     size={14}
