@@ -118,7 +118,7 @@ export default function TermsCondition() {
         <li>Any feedback, comments, or suggestions you may provide regarding the Site is entirely voluntary and we will be free to use such feedback, comments or suggestions without any obligation to you.</li>
       </ul>
       <h2 className="text-xl md:text-xl font-bold mt-6 mb-2">Privacy Policy</h2>
-      <p className='text-gray-500'>Your use of the Site is also governed by our Privacy Policy, which can be found at <Link to="/privacy-policy" className='text-blue-600'>http://localhost:3300/privacy-policy.</Link>
+      <p className='text-gray-500'>Your use of the Site is also governed by our Privacy Policy, which can be found at <Link to="/privacy-policy" className='text-blue-600'>https://www.prisbook.com/privacy-policy.</Link>
         By using the Site, you consent to the collection, use, and sharing of your information as described in the Privacy Policy.</p>
 
       <h2 className="text-xl md:text-xl font-bold mt-6 mb-2">SMS Terms of Service</h2>

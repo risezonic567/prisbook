@@ -68,6 +68,7 @@ export default function App() {
           <Routes>
             <Route path='/' element={<FlightPage />} />
             <Route path='/car-rental' element={<CarRentalPage />} />
+            //this is just a test
             <Route path='/hotel' element={<HotelPage />} />
             <Route path='/about-us' element={<AboutUsPage />} />
             <Route path='/cruise' element={<CruisePage />} />

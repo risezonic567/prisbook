@@ -155,7 +155,7 @@ export default function CheckoutPage() {
       // =========================
 
       const bookingRes = await fetch(
-        "http://localhost:3300/api/checkout/booking",
+        "https://www.prisbook.com/api/checkout/booking",
         {
           method: "POST",
 
@@ -202,7 +202,7 @@ export default function CheckoutPage() {
       }
 
       const paymentRes = await fetch(
-        "http://localhost:3300/api/payment/initiate",
+        "https://www.prisbook.com/api/payment/initiate",
         {
           method: "POST",
 
@@ -774,7 +774,7 @@ export default function CheckoutPage() {
 //       // =========================
 
 //       const bookingRes = await fetch(
-//         "http://localhost:3300/api/checkout/booking",
+//         "https://www.prisbook.com/api/checkout/booking",
 //         {
 //           method: "POST",
 
@@ -823,7 +823,7 @@ export default function CheckoutPage() {
 //       }
 
 //       const paymentRes = await fetch(
-//         "http://localhost:3300/api/payment/initiate",
+//         "https://www.prisbook.com/api/payment/initiate",
 //         {
 //           method: "POST",
 
