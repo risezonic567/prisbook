@@ -36,6 +36,6 @@ app.use(express.json())
 app.use("/api",Router)
 
 
-const port = process.env.PORT || 3300  
+const port = process.env.PORT || 3400  
 
 app.listen(port,console.log( `Server IS started at http://localhost:${port}`))
