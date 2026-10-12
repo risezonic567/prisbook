@@ -134,7 +134,8 @@ export default function Footer() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs white">
               <div className="p-4 rounded-2xl bg-slate-950/60 border border-slate-800/70 hover:border-slate-700 ">
                 <span className="font-bold text-slate-200 block mb-1">USA Office</span>
-                <p>17662 Irvine Blvd, Suite 9 Tustin, CA 92780</p>
+                <p>200 SPECTRUM CENTER DR
+IRVINE, CA 92618</p>
               </div>
             </div>
           </div>

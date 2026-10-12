@@ -319,9 +319,8 @@ export default function ContactPage() {
                   </span>
                 </div>
                 <p className="text-neutral-600">
-                  17662 Irvine Blvd Suite 9,
-                  <br />
-                  Tustin, CA 92780
+                 200 SPECTRUM CENTER DR
+IRVINE, CA 92618
                 </p>
               </div>
             </div>
